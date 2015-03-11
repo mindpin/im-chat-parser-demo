@@ -41,3 +41,17 @@ group :development, :test do
   gem 'spring'
 end
 
+gem "mongoid", "~> 4.0.0"
+
+
+
+# gem 'im-chat-parser', :git => 'git://github.com/arlyxiao/im-chat-parser.git'
+gem "im-chat-parser", :path => "~/www/mindpin/im-chat-parser"
+
+gem 'rails_admin'
+
+
+
+
+
+
