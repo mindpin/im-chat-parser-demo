@@ -41,8 +41,8 @@ class ParseController < ApplicationController
       )
     end
 
-    # redirect_to '/'
-    render :nothing => true
+    redirect_to '/'
+    # render :nothing => true
   end
 
 end
