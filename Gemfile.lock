@@ -146,6 +146,7 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
+    rails_stdout_logging (0.0.3)
     railties (4.2.0)
       actionpack (= 4.2.0)
       activesupport (= 4.2.0)
@@ -205,6 +206,7 @@ DEPENDENCIES
   mongoid (~> 4.0.0)
   rails (= 4.2.0)
   rails_admin
+  rails_stdout_logging
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring

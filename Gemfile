@@ -41,6 +41,13 @@ group :development, :test do
   gem 'spring'
 end
 
+group :production do
+  gem 'rails_stdout_logging'
+end
+
+
+
+
 gem "mongoid", "~> 4.0.0"
 
 
