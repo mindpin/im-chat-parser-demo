@@ -203,6 +203,7 @@ DEPENDENCIES
   im-chat-parser!
   jbuilder (~> 2.0)
   jquery-rails
+  kaminari
   mongoid (~> 4.0.0)
   rails (= 4.2.0)
   rails_admin

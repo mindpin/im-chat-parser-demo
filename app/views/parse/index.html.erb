@@ -1,10 +1,13 @@
+<%= render 'home/menu' %>
+
+
 <%= form_tag("/parse", method: "post") do %>
   <input type="submit" name="submit" value="Convert" />
-  <select name="type">
+  <!-- <select name="type">
     <option value="single" <% if params[:type] == 'single' %> selected <% end %>>qq-single</option>
     <option value="multiple" <% if params[:type] == 'multiple' %> selected <% end %>>qq-multiple</option>
   </select>
-  <div class="row">
+ -->  <div class="row">
     <div class="col-md-6">
       <textarea name="chat_text" style="width: 99%; height: 500px;"><%= params[:chat_text] %></textarea>
     </div>

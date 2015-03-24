@@ -1,0 +1,9 @@
+<%= render 'home/menu' %>
+
+<ul>
+  <% @chat_records.each do |record| %>
+  <li><a href="/home/<%= record.id %>"><%= record.created_at %></a></li>
+  <% end %>
+</ul>
+
+<%= paginate @chat_records %>

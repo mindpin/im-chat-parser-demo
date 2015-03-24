@@ -19,7 +19,14 @@ class ParseController < ApplicationController
 
     # p file.path
     # p '===='
-    chat = ImChatParser.load(file.path, params[:type])
+    
+    first_line = File.open(file.path) {|f| f.readline}
+    if (first_line =~ /^【/)
+      chat = ImChatParser.load(file.path, 'multiple')
+    else
+      chat = ImChatParser.load(file.path, 'single')
+    end
+
     file.unlink
 
     # p chat.lines.length
@@ -27,7 +34,7 @@ class ParseController < ApplicationController
     # p chat.lines[2].user
     # p chat.lines[2].text
 
-
+    chat_record = ChatRecord.create
 
     chat.lines.each do |line|
       user = User.where(
@@ -35,9 +42,10 @@ class ParseController < ApplicationController
         :qq_num => line.user.qq_num
       ).first_or_create!
 
-      Line.create(
+      chat_record.lines.create(
         :user_id => user.id,
-        :text => line.text
+        :text => line.text,
+        :time => line.time
       )
     end
 

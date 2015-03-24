@@ -1,0 +1,16 @@
+<%= render 'home/menu' %>
+
+<table border="1">
+  <% @lines.each do |line| %>
+  <tr>
+    <td>
+      <p>
+        <b>发言: </b><a href="/home/user_chat?user_id=<%= line.user.id %>"><%= line.user.name_list %></a>
+        <span style="margin-left: 15px;"><%= line.time %></span>
+      </p>
+      <%= simple_format line.text.gsub('\n', '<br />') %>
+    </td>
+  </tr>
+  <% end %>
+</table>
+
