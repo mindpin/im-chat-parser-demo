@@ -56,10 +56,17 @@ class ParseController < ApplicationController
     def save_into_db(chat)
       chat_record = ChatRecord.create
       chat.lines.each do |line|
-        user = User.where(
-          :name_list => line.user.names.map {|item| item }.join(','),
-          :qq_num => line.user.qq_num
-        ).first_or_create!
+        name_list = line.user.names.map {|item| item }.join(',')
+        if User.where(:name_list => name_list).exists?
+          user = User.where(:name_list => name_list).first
+        else
+          user = User.where(
+            :name_list => line.user.names.map {|item| item }.join(','),
+            :qq_num => line.user.qq_num
+          ).first_or_create!
+        end
+
+        
 
         chat_record.lines.create(
           :user_id => user.id,
