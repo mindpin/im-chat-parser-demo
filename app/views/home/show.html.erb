@@ -1,13 +1,18 @@
 <%= render 'home/menu' %>
 
 <table border="1">
+  <tr>
+    <td>发言人</td>
+    <td>时间</td>
+    <td>QQ</td>
+    <td></td>
+  </tr>
   <% @lines.each do |line| %>
   <tr>
+    <td><a href="/home/user_chat?user_id=<%= line.user.id %>"><%= line.user.name_list %></a></td>
+    <td><%= line.time %></td>
+    <td><%= line.user.qq_num %></td>
     <td>
-      <p>
-        <b>发言: </b><a href="/home/user_chat?user_id=<%= line.user.id %>"><%= line.user.name_list %></a>
-        <span style="margin-left: 15px;"><%= line.time %></span>
-      </p>
       <%= simple_format line.text.gsub('\n', '<br />') %>
     </td>
   </tr>

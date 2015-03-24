@@ -3,8 +3,6 @@ require 'im-chat-parser'
 class ParseController < ApplicationController
 
   def index
-    
-
     # render :nothing => true
   end
 

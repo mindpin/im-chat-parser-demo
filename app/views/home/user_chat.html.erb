@@ -1,20 +1,32 @@
+
+
 <%= render 'home/menu' %>
 
+
 <table border="1">
+  <tr>
+    <td>发言人</td>
+    <td>时间</td>
+    <td>QQ</td>
+    <td></td>
+    <td>chat_record</td>
+  </tr>
   <% @lines.each do |line| %>
   <tr>
+    <td><a href="/home/user_chat?user_id=<%= line.user.id %>"><%= line.user.name_list %></a></td>
+    <td><%= line.time %></td>
+    <td><%= line.user.qq_num %></td>
     <td>
-      <p>
-        <b>发言: </b><%= line.user.name_list %>
-        <span style="margin-left: 15px;"><%= line.time %></span>
-      </p>
       <%= simple_format line.text.gsub('\n', '<br />') %>
-
-      <p><a href="/home/<%= line.chat_record.id %>"><b>所属 chat_record</b></a></p>
     </td>
+    <td><a href="/home/<%= line.chat_record.id %>">所属Chat Record</a></td>
   </tr>
   <% end %>
 </table>
 
 
+
 <%= paginate @lines %>
+
+
+
