@@ -15,4 +15,16 @@ class HomeController < ApplicationController
     @lines = user.lines.page params[:page]
   end
 
+  def destroy
+    chat_record = ChatRecord.find(params[:id])
+    chat_record.lines.each do |line|
+      line.user.destroy if line.user
+      line.destroy
+    end
+
+    chat_record.destroy
+
+    redirect_to '/' 
+  end
+
 end

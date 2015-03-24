@@ -1,8 +1,12 @@
 <%= render 'home/menu' %>
 
-<ul>
+<table border="1">
+  
   <% @chat_records.each do |record| %>
-  <li><a href="/home/<%= record.id %>"><%= record.created_at %></a></li>
+  <tr>
+    <td><a href="/home/<%= record.id %>"><%= record.created_at %></a></td>
+    <td><%= link_to "delete", "/home/#{record.id}", :method => :delete, data: { confirm: "Delete?"} %></td>
+  </tr>
   <% end %>
 </ul>
 
