@@ -1,5 +1,3 @@
-require 'im-chat-parser'
-
 class ParseController < ApplicationController
 
   def index
@@ -19,6 +17,8 @@ class ParseController < ApplicationController
       p e.message
       render :nothing => true
     end
+
+    # render :nothing => true
   end
 
 
@@ -39,12 +39,7 @@ class ParseController < ApplicationController
     def parse_chat_file(file)
       file = build_tmp_file
 
-      first_line = File.open(file.path) {|f| f.readline}
-      if (first_line =~ /^【/)
-        chat = ImChatParser.load(file.path, 'multiple')
-      else
-        chat = ImChatParser.load(file.path, 'single')
-      end
+      chat = ImChatParser.load(file.path)
 
       file.unlink
       
