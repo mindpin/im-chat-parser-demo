@@ -50,11 +50,13 @@ class ParseController < ApplicationController
       chat_record = ChatRecord.create
       chat.lines.each do |line|
         name_list = line.user.names.map {|item| item }.join(',')
+        name_list = name_list.gsub(',', '').blank?? line.user.qq_num: name_list
+
         if User.where(:name_list => name_list).exists?
           user = User.where(:name_list => name_list).first
         else
           user = User.where(
-            :name_list => line.user.names.map {|item| item }.join(','),
+            :name_list => name_list,
             :qq_num => line.user.qq_num
           ).first_or_create!
         end

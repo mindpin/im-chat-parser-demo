@@ -77,5 +77,3 @@ production:
         read: primary
         max_retries: 1
         retry_interval: 0
-
-
