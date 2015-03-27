@@ -1,5 +1,6 @@
-PATH
-  remote: ~/www/mindpin/im-chat-parser
+GIT
+  remote: git://github.com/arlyxiao/im-chat-parser.git
+  revision: d3fe88642483b60d0cd9febbf412a574543d67d0
   specs:
     im-chat-parser (0.0.1)
 
