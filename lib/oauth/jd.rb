@@ -1,3 +1,5 @@
+require 'net/http'
+
 class Jd
 
   def initialize
