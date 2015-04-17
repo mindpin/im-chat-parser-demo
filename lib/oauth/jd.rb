@@ -1,9 +1,9 @@
 class Jd
 
   def initialize
-    @client_id = '27BB2A6DC83C9CAD315E4EA4878D01AF'
-    @client_secret = 'ff87960bcc3b4cf093ad6696a4844bd7'
-    @redirect_uri = 'http://touch-vote-demo.herokuapp.com'
+    @client_id = '89E48C4D5041C7BD089EC9A56F612CAA'
+    @client_secret = '18f1515f9cc14833b8609c8806b87497'
+    @redirect_uri = 'https://serene-thicket-8391.herokuapp.com'
 
   end
 
