@@ -3,7 +3,7 @@ class Jd
   def initialize
     @client_id = '89E48C4D5041C7BD089EC9A56F612CAA'
     @client_secret = '18f1515f9cc14833b8609c8806b87497'
-    @redirect_uri = 'https://serene-thicket-8391.herokuapp.com'
+    @redirect_uri = 'https://serene-thicket-8391.herokuapp.com/'
 
   end
 
