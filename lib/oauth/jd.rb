@@ -9,7 +9,7 @@ class Jd
 
     @client_id = '7E2684D558A72C9AAB13E20317778614'
     @client_secret = '348fc4cb06b1418a956cffed7d864317'
-    @access_token = '9b72660e-4b84-4144-ba81-ffb03bb9c522'
+    @access_token = '9024b342-b753-405b-ba6c-565db9cd7d39'
 
     @redirect_uri = 'https://serene-thicket-8391.herokuapp.com/'
     @method = '360buy.ware.get'

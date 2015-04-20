@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :home do
     collection do
       get :user_chat
+      get :test_taobao_api_callback
     end
   end
 

@@ -22,6 +22,11 @@ class HomeController < ApplicationController
     @lines = @chat_record.lines
   end
 
+  def test_taobao_api_callback
+
+    render :nothing => true
+  end
+
 
   def user_chat
     user = User.find(params[:user_id])
