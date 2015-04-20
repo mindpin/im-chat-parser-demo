@@ -12,7 +12,9 @@ class HomeController < ApplicationController
 
       JdUser.create(:token => data['access_token'])
     end
-    
+
+
+    @jd_product_api = jd.build_api_request(1217499)
   end
 
   def show
