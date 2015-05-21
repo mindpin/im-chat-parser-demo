@@ -2,19 +2,6 @@ class HomeController < ApplicationController
 
   def index
     @chat_records = ChatRecord.page params[:page]
-
-    # jd test code
-    jd = Jd.new
-    @jd_oauth_link = jd.build_url
-
-    if params && params['code']
-      data = jd.get_access_token(params['code'])
-
-      JdUser.create(:token => data['access_token'])
-    end
-
-
-    @jd_product_api = jd.build_api_request(1217499)
   end
 
   def show
